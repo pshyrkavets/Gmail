@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <properties>
+        <property name="pattern">[%d{HH:mm:ss}] %p (%F:%L) - %m%n</property>
+    </properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <File name="gmailLogger" fileName="target/logs/gmailLogger.log">
+            <PatternLayout pattern="${pattern}" />
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="gmailLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
